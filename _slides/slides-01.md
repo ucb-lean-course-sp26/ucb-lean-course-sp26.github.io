@@ -12,15 +12,19 @@ This is the title slide.
 
 # About This Course
 
-- Point 1
+- Point 1: $a + b = b + a$
 
 --
 
-- Point 2
+- Point 2: $(a + b)^2 > 2ab$
 
 --
 
-- Point 3
+We can also have centered math equations:
+
+$$
+\sum_{k=1}^n k = \frac{n (n + 1)}{2}
+$$
 
 ---
 

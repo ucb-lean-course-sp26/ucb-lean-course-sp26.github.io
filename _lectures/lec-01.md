@@ -12,6 +12,15 @@ slides_url: /slides/slides-01.html
 
 Notes for the first lecture will be added here...
 
+## LaTeX support
+
+The notes support inline math like $e^{i \pi} + 1 = 0$, or centered math
+like
+
+$$
+    \int_{-\infty}^{\infty} e^{-x^2/2} dx = \sqrt{2 \pi}
+$$
+
 ## Sample Code Block
 
 Below we are testing how a code block would get rendered.
