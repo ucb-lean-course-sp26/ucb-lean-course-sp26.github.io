@@ -1,0 +1,15 @@
+name = "LeanSource"
+version = "0.1.0"
+defaultTargets = ["Demos", "PSets"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+
+[[lean_lib]]
+name = "Demos"
+srcDir = "."
+
+[[lean_lib]]
+name = "PSets"
+srcDir = "."
