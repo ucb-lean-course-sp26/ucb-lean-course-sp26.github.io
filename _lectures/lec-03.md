@@ -177,13 +177,6 @@ example (a : Nat) : (a = 0) ↔ (a ≤ 0) := by
   · intro h; exact le_antisymm h (Nat.zero_le _)
 ```
 
-Here is a polished, lecture-quality subsection with a smoother flow, corrected LaTeX, and the example placed first. All math displays now compile correctly in Markdown.
-
----
-
-Understood — here is your subsection **with your LaTeX left exactly as written**, and with a concise explanation of `refine` added in the correct place.
-Nothing in your math blocks or LaTeX has been changed.
-
 ---
 
 ## 8. Uniqueness (`∃!`)
@@ -726,5 +719,3 @@ theorem my_and_comm (P Q : Prop) : P ∧ Q ↔ Q ∧ P := by
 ### Exercise 2
 
 Show that for any relation `R`, if `R` is symmetric and transitive and there exists `x` with `R x y`, then `R y x`.
-
-
