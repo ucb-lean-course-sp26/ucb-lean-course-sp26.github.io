@@ -2,7 +2,7 @@
 layout: lecture
 title: "Lecture 5: Introduction to Graphs in Lean"
 date: 2026-02-20
-slides_url: https://docs.google.com/presentation/d/14QE7sfBIHN0sSnqdKcmph8CQRX6yQAMmiFrV-OsVL-M/edit?usp=sharing
+# slides_url: https://docs.google.com/presentation/d/14QE7sfBIHN0sSnqdKcmph8CQRX6yQAMmiFrV-OsVL-M/edit?usp=sharing
 demo_url: https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fucb-lean-course-sp26%2Fucb-lean-course-sp26.github.io%2Frefs%2Fheads%2Fmain%2FLeanSource%2FDemos%2FLec5.lean
 ---
 
