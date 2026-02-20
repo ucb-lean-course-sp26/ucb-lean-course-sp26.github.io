@@ -187,6 +187,7 @@ lemma exists_color_not_in_neighbors (D : ℕ) (v : V) (c : V → Fin (D + 1))
   have hlt : forbidden.card < (Finset.univ : Finset (Fin (D + 1))).card := by
     sorry
 
+
   -- Step 4: By pigeonhole, pick a color in univ but not in forbidden.
   -- `Finset.exists_mem_notMem_of_card_lt_card` says:
   --   if |A| < |B| then ∃ x ∈ B, x ∉ A
@@ -194,13 +195,30 @@ lemma exists_color_not_in_neighbors (D : ℕ) (v : V) (c : V → Fin (D + 1))
 
   -- Step 5: Show this color is safe for all neighbors.
   refine ⟨col, ?_⟩
+  -- We know col ∉ forbidden
+  -- Now must prove for all nbrs w of v, col ≠ c w
   intro w hwN
   -- prove c w belongs to forbidden
-  have : c w ∈ forbidden := by
+  have : c w ∈ forbidden :=  by
     exact Finset.mem_image.2 ⟨w, hwN, rfl⟩
-  -- if col = c w then col ∈ forbidden, contradiction
+--This is the witness package required by the “∃” statement:
+--  pick the witness x := w
+--  prove w ∈ G.neighbors v (that’s hwN)
+--  prove c w = c w (that’s rfl)
+
+  -- if col = c w then col ∈ forbidden, a contradiction (in class exercise)
   sorry
 
+
+-- simpa use example
+
+example {α : Type} [DecidableEq α] (s : Finset α) (a x : α)
+    (hx : x ≠ a ∧ x ∈ s) : x ∈ s.erase a := by
+  -- mem_erase: x ∈ s.erase a ↔ x ≠ a ∧ x ∈ s
+  simpa [Finset.mem_erase] using hx
+  --simp [Finset.mem_erase,hx] or
+  -- simp [Finset.mem_erase]
+  -- exact hx
 /-!
 ### Extending a Partial Coloring
 
@@ -252,8 +270,11 @@ lemma extend_proper (D : ℕ) (S : Finset V) (v : V) (hv : v ∈ S)
     sorry
 
 
+
+
 /-!
 ### Main Coloring Theorem
+
 
 **Theorem:** Any finite graph with maximum degree D is (D+1)-colorable.
 
