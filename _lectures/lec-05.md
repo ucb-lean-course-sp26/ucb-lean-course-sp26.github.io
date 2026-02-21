@@ -279,7 +279,62 @@ In a programming language without dependent types, you might represent a walk as
 
 In Lean, these properties are guaranteed by the **type** itself—any term of type `Walk u v` is automatically well-formed.
 
-### 4.2 Walk Length
+### 4.2 Implicit Graph Parameters and `(G := G)` Syntax
+
+You may notice that the walk definitions are written as:
+
+```lean
+inductive Walk : V → V → Type u
+  | nil  {u : V} : Walk u u
+  | cons {u v w : V} (h : G.adj u v) (p : Walk v w) : Walk u w
+```
+
+but later usage writes `Walk (G := G) u v`. Here is what is going on.
+
+**`Walk` secretly takes `G` as an argument.**
+
+Even though the source line only says `Walk : V → V → Type u`, Lean elaborates this to something like:
+
+```lean
+MyGraph.Walk (G : MyGraph V) : V → V → Type u
+```
+
+The graph `G` is pulled in as a parameter from the surrounding `variable (G : MyGraph V)` declaration. So the actual type of `Walk` is roughly:
+
+```lean
+Walk : MyGraph V → V → V → Type u
+```
+
+**Why write `(G := G)` explicitly?**
+
+Lean often can infer `G` from context, but in type signatures of new definitions there may be no earlier argument from which to infer it. For example:
+
+```lean
+def length : {u v : V} → Walk (G := G) u v → Nat
+```
+
+If you wrote `Walk u v` here, Lean would complain because `Walk` needs a graph argument and there is nothing in scope to infer it from.
+
+**What does `(G := G)` mean syntactically?**
+
+It is **named argument syntax**: the first `G` is the name of the parameter in the definition, and the second `G` is the local variable you want to pass. So `Walk (G := G) u v` means "use the current graph `G` for the `G` parameter of `Walk`."
+
+This is the same pattern as:
+
+```lean
+#check @id (α := Nat) 3
+```
+
+**Can we avoid writing it so much?**
+
+Two common approaches:
+
+* Make `G` explicit in the definition of `Walk`: `inductive Walk (G : MyGraph V) : V → V → Type u`. Then you write `Walk G u v` everywhere naturally.
+* Keep it implicit and only write `(G := G)` when Lean cannot infer it from surrounding arguments. Inside a namespace with `variable {G}`, many definitions can omit it; in standalone type signatures it is often required.
+
+Being explicit as shown in the demo avoids inference failures and makes it clear that all operations refer to the same graph.
+
+### 4.3 Walk Length
 
 The **length** of a walk is its number of edges:
 
@@ -289,7 +344,7 @@ def length : {u v : V} → Walk (G := G) u v → Nat
   | _, _, cons _ p   => Nat.succ p.length
 ```
 
-### 4.3 Walk Operations
+### 4.4 Walk Operations
 
 **Appending walks:**
 
@@ -310,7 +365,7 @@ def append : {u v w : V} →
 
 This is proved by induction on `p1`.
 
-### 4.4 Converting Walks to Vertex Lists
+### 4.5 Converting Walks to Vertex Lists
 
 A walk can be represented as a list of vertices it visits:
 
@@ -327,7 +382,7 @@ def toList : {u v : V} → Walk (G := G) u v → List V
     p.toList.length = p.length + 1
 ```
 
-### 4.5 Shortening Walks with Duplicate Vertices
+### 4.6 Shortening Walks with Duplicate Vertices
 
 **Splicing Lemma:** If a walk's vertex list contains a duplicate, we can construct a strictly shorter walk with the same endpoints.
 
@@ -403,7 +458,7 @@ This is left as homework. The key ideas:
 * If `x ≠ u`, then `x` must be in the tail, and we recurse
 * Use `le_trans` to combine inequalities from the inductive hypothesis
 
-### 4.6 Main Theorem: Short Walk Existence
+### 4.7 Main Theorem: Short Walk Existence
 
 **Theorem:** For any walk from `u` to `v`, there exists a walk from `u` to `v` with length strictly less than the number of vertices.
 

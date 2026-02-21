@@ -52,6 +52,9 @@ Final Project 60%
 - **PS2 (Due 02/19)**:
   [[View On Github]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset2.lean)
   [[Download]](/psets/pset2.lean)
+- **PS3 (Due 03/05)**:
+  [[View On Github]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset3.lean)
+  [[Download]](/psets/pset3.lean)
 
 ## AI policy
 You are welcome to use any AI tool to ask **general questions** about Lean4 syntax, tactics, and mathlib theorem usage.
