@@ -90,6 +90,8 @@ Course on introduction to interactive theorem proving using Lean by [Siddhartha 
 - [EPFL Lean mini course](https://github.com/b-mehta/epfl-comb):
 Adapted from *Mathematics in Lean* and the
 [Lean for the Curious Mathematician 2023 workshop](https://lftcm2023.github.io/).
+- [Logical Verification 2025 (Lean Forward)](https://github.com/lean-forward/logical_verification_2025):
+Course materials and repository for the Lean Forward Logical Verification 2025 program.
 
 Miscellaneous:
 - [Loogle!](https://loogle.lean-lang.org/): Search engine for Lean 4.
