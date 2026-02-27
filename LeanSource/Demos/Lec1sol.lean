@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 ------- Transient Commands -------
 
 #check 5           -- ℕ
@@ -161,6 +163,7 @@ theorem sum_of_squares (n : Nat) :
     simp [sumSeq, square]
     ring_nf
     linarith
+
 
 
 /--
