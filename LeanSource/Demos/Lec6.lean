@@ -92,8 +92,11 @@ This is the most important parameter of a code for error-correction purposes.
 /-- A code C has minimum distance d if d is the minimum Hamming distance
     between any two distinct codewords. -/
 def hasMinDist (C : Code n α) (d : ℕ) : Prop :=
-  (∃ u ∈ C, ∃ v ∈ C, u ≠ v ∧ hammingDist u v = d) ∧
-  (∀ u ∈ C, ∀ v ∈ C, u ≠ v → hammingDist u v ≥ d)
+  sorry
+
+-- def hasMinDist (C : Code n α) (d : ℕ) : Prop :=
+--   (∃ u ∈ C, ∃ v ∈ C, u ≠ v ∧ hammingDist u v = d) ∧
+--   (∀ u ∈ C, ∀ v ∈ C, u ≠ v → hammingDist u v ≥ d)
 
 end Definitions
 
@@ -115,6 +118,9 @@ This is a (3, 2, 3)-code: length 3, two codewords, minimum distance 3.
 -/
 
 -- The binary repetition code of length n.
+-- def repetitionCode (n : ℕ) : Code n Bool :=
+--   sorry
+
 def repetitionCode (n : ℕ) : Code n Bool :=
   {(fun _ => false), (fun _ => true)}
 
@@ -236,18 +242,7 @@ codeword from any received word with ≤ t errors.
 lemma hammingBalls_disjoint (C : Code n α) (t : ℕ)
     (h_dist : ∀ u ∈ C, ∀ v ∈ C, u ≠ v → 2 * t + 1 ≤ hammingDist u v) :
     ∀ u ∈ C, ∀ v ∈ C, u ≠ v → Disjoint (hammingBall u t) (hammingBall v t) := by
-  intro u hu v hv huv
-  rw [Finset.disjoint_left]
-  intro w hwu hwv
-  simp [hammingBall] at hwu hwv
-  -- w is in both balls, so d(u, w) ≤ t and d(w, v) ≤ t.
-  -- By the triangle inequality, d(u, v) ≤ 2t. But d(u, v) ≥ 2t+1.
-  have h_tri : hammingDist u v ≤ hammingDist u w + hammingDist w v :=
-    hammingDist_triangle u w v
-  have h_ge := h_dist u hu v hv huv
-  have hwu' : hammingDist u w ≤ t := hwu
-  have hwv' : hammingDist w v ≤ t := by rwa [hammingDist_comm] at hwv
-  omega
+  sorry
 
 /-!
 ### Error Correction Capability
@@ -271,14 +266,7 @@ theorem error_correction (C : Code n α) (t : ℕ)
     (c r : Codeword n α) (hc : c ∈ C)
     (h_errors : hammingDist c r ≤ t) :
     ∀ c' ∈ C, c' ≠ c → hammingDist c' r > t := by
-  intro c' hc' hne
-  -- By triangle inequality: d(c, c') ≤ d(c, r) + d(r, c')
-  -- Rearranged: d(c', r) ≥ d(c, c') - d(c, r) ≥ (2t+1) - t = t+1
-  have h_tri : hammingDist c c' ≤ hammingDist c r + hammingDist r c' :=
-    hammingDist_triangle c r c'
-  have h_ge : 2 * t + 1 ≤ hammingDist c c' := h_dist c hc c' hc' (Ne.symm hne)
-  have h_sym : hammingDist r c' = hammingDist c' r := hammingDist_comm r c'
-  omega
+  sorry
 
 /-!
 ### Nearest-Neighbor Decoding Algorithm
