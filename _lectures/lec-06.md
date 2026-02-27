@@ -307,9 +307,9 @@ An **erasure** is strictly different from an error: the receiver knows *which* p
 
 **Key result:** A code with minimum distance $d$ can correct up to $d - 1$ erasures.
 
-**Proof:** Suppose codeword $c$ was sent, and positions $E$ with $|E| \leq d-1$ were erased. If $c' \neq c$ is another codeword consistent with the received (partially erased) word, then $c$ and $c'$ agree on all unerased positions, so they can only differ on the $\leq d-1$ erased positions:
+**Proof:** Suppose codeword $c$ was sent, and positions $E$ with $\|E\| \leq d-1$ were erased. If $c' \neq c$ is another codeword consistent with the received (partially erased) word, then $c$ and $c'$ agree on all unerased positions, so they can only differ on the $\leq d-1$ erased positions:
 
-$$d(c, c') \leq |E| \leq d - 1 < d$$
+$$d(c, c') \leq \|E\| \leq d - 1 < d$$
 
 contradicting the minimum distance.
 
