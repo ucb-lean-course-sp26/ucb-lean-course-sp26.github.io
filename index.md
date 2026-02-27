@@ -52,6 +52,7 @@ Final Project 60%
 - **PS2 (Due 02/19)**:
   [[View On Github]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset2.lean)
   [[Download]](/psets/pset2.lean)
+  [[Solutions]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset2sol.lean)
 - **PS3 (Due 03/05)**:
   [[View On Github]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset3.lean)
   [[Download]](/psets/pset3.lean)
