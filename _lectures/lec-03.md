@@ -4,6 +4,7 @@ title: "Lecture 3: Proofs with Structure"
 date: 2026-02-06
 slides_url: https://docs.google.com/presentation/d/1qkxnjoUbJ3frbNTJh1Os7FW8QLmYJx-NmEo8nGwaslI/edit?usp=sharing
 demo_url: https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fucb-lean-course-sp26%2Fucb-lean-course-sp26.github.io%2Frefs%2Fheads%2Fmain%2FLeanSource%2FDemos%2FLec3.lean
+demo_sol_url: https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fucb-lean-course-sp26%2Fucb-lean-course-sp26.github.io%2Frefs%2Fheads%2Fmain%2FLeanSource%2FDemos%2FLec3sol.lean
 ---
 
 * TOC
@@ -719,3 +720,5 @@ theorem my_and_comm (P Q : Prop) : P ∧ Q ↔ Q ∧ P := by
 ### Exercise 2
 
 Show that for any relation `R`, if `R` is symmetric and transitive and there exists `x` with `R x y`, then `R y x`.
+
+

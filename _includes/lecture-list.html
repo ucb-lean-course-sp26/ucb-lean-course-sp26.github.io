@@ -11,6 +11,9 @@
       {% if lec.demo_url %}
         [<a href="{{ lec.demo_url | relative_url }}">Code</a>]
       {% endif %}
+      {% if lec.demo_sol_url %}
+        [<a href="{{ lec.demo_sol_url | relative_url }}">Solution</a>]
+      {% endif %}
     </li>
   {% endfor %}
 </ul>

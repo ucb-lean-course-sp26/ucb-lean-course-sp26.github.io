@@ -4,6 +4,7 @@ title: "Lecture 4: Query Complexity of Boolean Functions"
 date: 2026-02-13
 slides_url: https://docs.google.com/presentation/d/1F-QIUplMTTIcAPHiB1Carv0VRnWDzA1ksspBa4xgxt0/edit?usp=sharing
 demo_url: https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fucb-lean-course-sp26%2Fucb-lean-course-sp26.github.io%2Frefs%2Fheads%2Fmain%2FLeanSource%2FDemos%2FLec4.lean
+demo_sol_url: https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fucb-lean-course-sp26%2Fucb-lean-course-sp26.github.io%2Frefs%2Fheads%2Fmain%2FLeanSource%2FDemos%2FLec4sol.lean
 ---
 
 * TOC
