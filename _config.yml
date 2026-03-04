@@ -40,6 +40,8 @@ collections:
     sort_by: date
   slides:
     output: true
+  project:
+    output: true
 
 # Build settings
 theme: minima
