@@ -5,7 +5,7 @@ title: Final Project Ideas
 
 # Final Project Ideas
 
-You are welcome to do any project you like — the lists below are just suggestions. If you are unsure whether a project idea works, you can email Shilun.
+You are welcome to do any project you like — the lists below are just suggestions. If you are unsure whether a project idea works, you can email any of the course staff.
 
 ---
 
