@@ -42,6 +42,32 @@ Final Project 60%
 ## Lectures
 {% include lecture-list.html %}
 
+## Final Projects
+
+Please see the [project ideas list](project/final_project.html) for suggested topics.
+
+### Groups
+Form groups of **1–3 people**. In general, choose a harder project if you have more people in your group.
+
+### Deadlines
+
+| Date | Milestone |
+|------|-----------|
+| March 17 | **Project Proposal Due** |
+| March 20 | **Pre-Project Presentations** |
+| April 10 | **Project Presentations** |
+| April 17 | **Project Presentations** |
+| April 24 | **Project Presentations** |
+| May 1 | **Project Presentations** |
+
+### Project Proposal (Due March 17)
+Submit a **1–2 page proposal** describing what you plan to formalize and the proof strategy you intend to follow. Use the [[proposal template]](project/proposal_template.html) [[Download]](/assets/proposal_template.zip).
+
+### Pre-Project Presentation (March 20)
+An **8-minute short presentation** covering:
+- What you are trying to formalize
+- The proof method or approach you plan to take
+
 ## Problem Sets
 <!-- - [Problem Set 1 (Lean file)](/LeanSource/PSets/PSet1.lean) -->
 ### Problem Set Mathlib Project Folder [[Download]](/psets/pset.zip)
