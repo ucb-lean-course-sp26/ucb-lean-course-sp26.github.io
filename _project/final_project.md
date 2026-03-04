@@ -80,7 +80,7 @@ Formalize the Tamo-Barg construction of optimal locally recoverable codes using 
 Formalize the algebraic correctness of the Agrawal-Kayal-Saxena deterministic primality test. Prove the core congruence properties in polynomial rings over finite fields without necessarily formalizing the polynomial-time computational complexity.
 
 ### Sensitivity Conjecture (Huang's Proof)
-Formalize Huang's proof resolving the sensitivity conjecture using the spectral properties of subgraphs of the Boolean cube. Requires the development of eigenvalue arguments and linear algebra machinery.
+Formalize Huang's proof resolving the sensitivity conjecture using the spectral properties of subgraphs of the Boolean cube. This should include the reduction from the sensitivity conjecture to the hypercube question (bounding the maximum degree of induced subgraphs of the Boolean cube), as well as the spectral argument that resolves it. Requires the development of eigenvalue arguments and linear algebra machinery.
 
 ### Evasiveness of Monotone Graph Properties
 Formalize the result that every monotone graph property is evasive (using topological or group-action arguments). This will require substantial combinatorial or topological machinery in Lean.
