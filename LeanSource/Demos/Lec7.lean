@@ -174,6 +174,11 @@ end Cslib.Algorithms.Lean
 namespace Cslib.Algorithms.Lean.TimeM
 
 
+/-End Dependencies Declairation -/
+
+
+--- Lecture 7: Algorithm Verification and Cryptography in Lean---
+
 
 /-
 
@@ -267,11 +272,6 @@ theorem median3_time (a b c : α) :
       · simp [median3, h1, h2, h3]
       · simp [median3, h1, h2, h3]
 
-/-End Dependencies Declairation -/
-
-
---- Lecture 7: Algorithm Verification and Cryptography in Lean---
-
 
 -- INSERTION SORT ----
 
@@ -296,8 +296,7 @@ def insert (x : α) : List α → TimeM ℕ (List α)
       if x ≤ y then
         return x :: y :: ys
       else
-        let zs ← insert x ys
-        return y :: zs
+        sorry
 
 /-- Insertion sort, counting the comparisons performed by each insert step. -/
 def insertionSort : List α → TimeM ℕ (List α)
@@ -309,7 +308,12 @@ def insertionSort : List α → TimeM ℕ (List α)
 
 section Correctness
 
-abbrev IsSorted (xs : List α) : Prop := List.Pairwise (· ≤ ·) xs
+abbrev IsSorted : List α → Prop
+  | [] => True
+  | [_] => True
+  | x :: y :: rest => sorry
+
+-- abbrev IsSorted (xs : List α) : Prop := List.Pairwise (· ≤ ·) xs
 
 @[simp] theorem ret_insert (x : α) (xs : List α) :
     ⟪insert x xs⟫ = List.orderedInsert (· ≤ ·) x xs := by
@@ -376,14 +380,7 @@ def timeInsertionSortRec : Nat → Nat
 /-- Inserting into a list of length `n` uses at most `n` comparisons. -/
 theorem time_insert_le (x : α) (xs : List α) :
     (insert x xs).time ≤ xs.length := by
-  induction xs with
-  | nil =>
-      simp [insert]
-  | cons y ys ih =>
-      by_cases hxy : x ≤ y
-      · simp [insert, hxy]
-      · simp [insert, hxy]
-        omega
+  sorry
 
 /-- The running time of insertion sort is bounded by the standard recurrence. -/
 theorem time_insertionSort_le_rec (xs : List α) :
@@ -410,7 +407,7 @@ theorem timeInsertionSortRec_le_sq (n : Nat) :
 /-- Hence insertion sort performs at most `n^2` comparisons on a list of length `n`. -/
 theorem time_insertionSort_le_sq (xs : List α) :
     (insertionSort xs).time ≤ xs.length * xs.length :=
-  le_trans (time_insertionSort_le_rec xs) (timeInsertionSortRec_le_sq xs.length)
+  sorry
 
 end TimeComplexity
 
@@ -441,14 +438,7 @@ open Nat
 -/
 lemma rsa_core (p : ℕ) [hp : Fact p.Prime] (c : ℕ) (x : ZMod p) :
     x ^ (1 + c * (p - 1)) = x := by
-  induction c with
-  | zero => simp
-  | succ c ih =>
-    have heq : 1 + (c + 1) * (p - 1) = 1 + c * (p - 1) + (p - 1) := by
-      rw [add_mul, one_mul, add_assoc]
-    rw [heq, pow_add, ih, mul_comm, ← pow_succ]
-    have : p - 1 + 1 = p := by have := hp.out.two_le; omega
-    rw [this]; exact ZMod.pow_card x
+  sorry
 
 
 /-- If `ed = 1 + c*(p-1)`, then `m^ed = m` in `ZMod p`. -/
@@ -460,7 +450,6 @@ lemma rsa_zmod_of_factor (p : ℕ) [Fact p.Prime]
     -- rewrite the exponent into the form used by `rsa_core`
     -- and then just apply it
     simpa [h] using (rsa_core p c (m : ZMod p))
-
   -- …then convert back to the casted-Nat-power statement
   simpa [Nat.cast_pow] using hpow
 
@@ -486,16 +475,13 @@ lemma rsa_zmod_q {p q m e d k : ℕ} [Fact q.Prime]
     (h_ed : e * d = 1 + k * (p - 1) * (q - 1)) :
     ((m ^ (e * d) : ℕ) : ZMod q) = (m : ZMod q) := by
   -- This is already of the form `1 + (k*(p-1))*(q-1)`
-  have h' : e * d = 1 + (k * (p - 1)) * (q - 1) := by
-    simpa [Nat.mul_assoc] using h_ed
-  exact rsa_zmod_of_factor q m (e*d) (k*(p - 1))  h'
+  sorry
 
 
 /--
   Lifts the equivalences from `ZMod p` and `ZMod q` up to `ZMod (p * q)`
   using the Chinese Remainder Theorem isomorphism.
 -/
-
 
 lemma rsa_crt {p q m ed : ℕ} (hpq : p.Coprime q)
     (hp : ((m ^ ed : ℕ) : ZMod p) = (m : ZMod p))
@@ -591,4 +577,8 @@ theorem rsa_correctness (sec : SecretKey) (m : ℕ) :
 
   exact rsa_crt_pow hpq_coprime hp_eq' hq_eq'
   -- Lift via CRT
+
+
+
+
 end RSA
