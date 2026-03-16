@@ -14,13 +14,13 @@ demo_sol_url: https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubuserconten
 In this lecture, we formalize reductions between NP-complete problems.
 Specifically, we illustrate two reductions:
 1. `Subset Sum` to `Partition`,
-2. `Not-All-Equal-SAT` to `3-Coloring`.
+2. `Not-All-Equal-3-SAT` to `3-Coloring`.
 
 ### What We Will Cover
 
 1. **Definitions of NP and reductions** and their Lean encodings
 2. **Subset Sum → Partition:** the `partitionWeight` reduction, completeness, and soundness
-3. **NAE-SAT → 3-Coloring:** an inductive vertex type, an explicit edge relation, and a correctness proof by case analysis
+3. **NAE-3SAT → 3-Coloring:** an inductive vertex type, an explicit edge relation, and a correctness proof by case analysis
 4. **New Lean techniques:** `U ⊕ Bool` for universe augmentation, inductive types for heterogeneous vertex sets, `fin_cases` and `by_cases` for exhaustive case splits, and `Finset.sum_add_sum_compl`
 
 ### Brief Background on NP-completeness
@@ -29,8 +29,8 @@ A language $L \subseteq \\{0, 1\\}^{\*}$ is said to be in $\mathsf{NP}$ (non-det
 time) if there exists a (deterministic) polynomial time "verifier" algorithm $V$
 and a function $p : \mathbb{N} \to \mathbb{N}$ with $p(n) = O(n^c)$ for some $c$ such that:
 
-* *(Completeness)* If $x \in L$, there exists a "witness" $y$, with $|y| \le p(|x|)$, such that $V(x, y)$ accepts.
-* *(Soundness)* If $x \notin L$, for all $y$ with $|y| \le p(|x|)$, $V(x, y)$ rejects.
+* *(Completeness)* If $x \in L$, there exists a "witness" $y$, with $\|y\| \le p(\|x\|)$, such that $V(x, y)$ accepts.
+* *(Soundness)* If $x \notin L$, for all $y$ with $\|y\| \le p(\|x\|)$, $V(x, y)$ rejects.
 
 ### Reducibility among Problems
 
@@ -169,11 +169,11 @@ theorem SubsetSumToPartitionReduction (w : U → ℕ) (T : ℕ) (h : T ≤ ∑ a
     (SubsetSumToPartitionSoundness w T h)
 ```
 
-## 3. NAE-SAT and 3-Coloring
+## 3. NAE-3SAT and 3-Coloring
 
 ### 3.1 Problem Definitions
 
-**Not-All-Equal Satisfiability (NAE-SAT).** Given Boolean variables $x_1, \dots, x_n$ and clauses $C_1, \dots, C_m$, where each clause is a *triple* of variables, does there exist a Boolean assignment such that in every clause the three variables do not all receive the same value?
+**Not-All-Equal Satisfiability (NAE-3SAT).** Given Boolean variables $x_1, \dots, x_n$ and clauses $C_1, \dots, C_m$, where each clause is a *triple* of variables, does there exist a Boolean assignment such that in every clause the three variables do not all receive the same value?
 
 In Lean, a clause is a `structure` with three variable fields:
 
@@ -266,7 +266,7 @@ The visual structure for one clause $(x_1, x_2, x_3)$ is:
 
 ### 3.4 The Reduction: Coloring Function
 
-The completeness direction requires constructing an explicit 3-coloring from a NAE-SAT assignment. The coloring rule is:
+The completeness direction requires constructing an explicit 3-coloring from a NAE-3SAT assignment. The coloring rule is:
 
 | Vertex kind | Color |
 |---|---|
@@ -299,7 +299,7 @@ private def naeColoring {V : Type} (assign : V → Bool) : OutputVertex V → Fi
 
 ### 3.5 Completeness
 
-**Theorem.** If the NAE-SAT instance `f` is satisfiable, then `ReductionGraph f` is 3-colorable.
+**Theorem.** If the NAE-3SAT instance `f` is satisfiable, then `ReductionGraph f` is 3-colorable.
 
 **Proof.** Use `naeColoring assign` as the witness. We must show that every adjacent pair gets different colors. The proof case-splits on the 6 possible edge types in `EdgeRelation`:
 
@@ -438,7 +438,7 @@ omega
 
 ## 5. Exercises
 
-### Exercise 1: NAE-SAT example
+### Exercise 1: NAE-3SAT example
 
 The file defines a small example:
 
@@ -465,7 +465,7 @@ In this lecture, we:
 
 * Encoded **NP-complete problems** as `Prop`-valued predicates over `Finset`s and `List`s
 * Formalized the **Subset Sum → Partition** reduction using `U ⊕ Bool` to augment the universe, and proved both directions of the equivalence using `Finset.sum_add_sum_compl`, `by_cases`, and `omega`
-* Formalized the **NAE-SAT → 3-Coloring** reduction using an inductive `OutputVertex` type, a pattern-matched `EdgeRelation`, and Mathlib's `SimpleGraph.Coloring`
+* Formalized the **NAE-3SAT → 3-Coloring** reduction using an inductive `OutputVertex` type, a pattern-matched `EdgeRelation`, and Mathlib's `SimpleGraph.Coloring`
 * Used `fin_cases` combined with boolean case splits for exhaustive verification of the coloring constraints
 * Used `omega` as a pigeonhole-in-`Fin 3` argument to close the soundness proof
 
