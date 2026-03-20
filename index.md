@@ -44,6 +44,8 @@ Final Project 60%
 
 ## Final Projects
 
+Here is the [List of Final Projects](_project/final_project_list.txt).
+
 Please see the [project ideas list](project/final_project.html) for suggested topics.
 
 ### Groups

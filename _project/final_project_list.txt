@@ -1,0 +1,17 @@
+AC0[2] Circuit Lower Bounds
+Poly-logarithmic independence fools AC0 circuits
+Johnson-Lindenstrauss Lemma
+Formalizing the Johnson-Lindenstrauss Lemma in Lean
+The Joint Conjecture
+On the Efferent Lower Bounds of Kakeya Sets with Dvir-Saraf-Sudan
+Karger's MinCut and sparsity of minimum cuts
+The Kleene-Post Theorem and the Structure of Noncomputable Sets
+Formalizing the Greedy Activity Selection Algorithm
+Formalising Kikuchi Matrix Methods for Locally Decodable Code Lower Bounds
+Communication Complexity
+A-infinity Categories
+Foundations of Online Learning Formalized
+Formalizing the Halving Algorithm and Its Optimal Mistake Bound in Lean 4
+Hypercontractivity Theorem
+Lean Asymptotic Tactics
+Karp's NP-Complete Reductions
