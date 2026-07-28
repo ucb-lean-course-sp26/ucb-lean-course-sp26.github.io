@@ -44,9 +44,30 @@ Final Project 60%
 
 ## Final Projects
 
-Here is the [List of Final Projects](_project/final_project_list.txt).
-
 Please see the [project ideas list](project/final_project.html) for suggested topics.
+
+Please see the [final project repository](https://github.com/ucb-lean-course-sp26/final-projects) for all class final projects.
+
+| Project | Author(s) |
+|---|---|
+| [A-infinity Categories](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/A-infinity%20Categories-Justin%20Mu) | Justin Mu |
+| [AC0[2] Circuit Lower Bounds](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/AC0%5B2%5D%20Circuit%20Lower%20Bounds-Yichuan%20Wang) | [Yichuan Wang](https://wyc908.github.io) |
+| [Formalising Two Quantum Coding Bounds in Lean 4](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalising%20Two%20Quantum%20Coding%20Bounds%20in%20Lean%204-Frederick%20Dehmel) | Frederick Dehmel |
+| [Formalizing Hypercontractivity for Boolean Functions](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20Hypercontractivity%20for%20Boolean%20Functions-Owen%20McGinty) | [Owen McGinty](https://github.com/omcginty) |
+| [Formalizing Karger's MinCut in Lean4](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20Karger%27s%20MinCut%20in%20Lean4-Joon%20Kim) | Joon Kim |
+| [Formalizing NP-Completeness Reductions in Lean 4](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20NP-Completeness%20Reductions%20in%20Lean%204-Kobe%20Zou) | [Kobe Zou](https://github.com/KobTheGreat) |
+| [Formalizing Online Learning and the Minimax Theorem](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20Online%20Learning%20and%20the%20Minimax%20Theorem-Karim%20Abdel%20Sadek-Mark%20Bedaywi) | [Karim Abdel Sadek](https://karimabdelsadek.com), [Mark Bedaywi](https://markbedaywi.ca) |
+| [Formalizing the BLR linearity Test in Lean](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20the%20BLR%20linearity%20Test%20in%20Lean-Prastik%20Mohanraj) | Prastik Mohanraj |
+| [Formalizing the Halving Algorithm and Its Optimal Mistake Bound in Lean 4](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20the%20Halving%20Algorithm%20and%20Its%20Optimal%20Mistake%20Bound%20in%20Lean%204-Arhaan%20Aggarwal) | [Arhaan Aggarwal](https://github.com/Arhaan2/Formalizing-Online-Prediction-From-Halving-to-Hedge-in-Lean) |
+| [Formalizing the Johnson-Lindenstrauss Lemma in Lean](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20the%20Johnson-Lindenstrauss%20Lemma%20in%20Lean-Ganesh%20Sankar) | Ganesh Sankar |
+| [Formalizing the Joints Theorem](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20the%20Joints%20Theorem-Yuchen%20Liu) | [Yuchen Liu](https://github.com/HLXY-420) |
+| [Formalizing the Kleene–Post Theorem in Lean 4](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20the%20Kleene%E2%80%93Post%20Theorem%20in%20Lean%204-Jacob%20Parish-Yvette%20Ren) | [Jacob Parish](https://github.com/jacobparish/cs294-project), Yvette Ren |
+| [Formalizing the Optimality of Kruskal's Algorithm](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formalizing%20the%20Optimality%20of%20Kruskal%27s%20Algorithm-Harsha%20Polavaram) | Harsha Polavaram |
+| [Formulizing Communication Complexity in Lean4](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Formulizing%20Communication%20Complexity%20in%20Lean4-Lucy%20Horowitz-Timothe%20Kasriel-Mihir%20Singhal) | [Lucy Horowitz](https://lucyhorowitz.github.io), Timothe Kasriel, [Mihir Singhal](https://mihirsinghal.com) |
+| [Lean Asymptotic Tactics](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Lean%20Asymptotic%20Tactics-Arnav%20Mehta) | Arnav Mehta |
+| [On the Efferent Lower Bounds of Kakeya Sets with Dvir-Saraf-Sudan](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/On%20the%20Efferent%20Lower%20Bounds%20of%20Kakeya%20Sets%20with%20Dvir-Saraf-Sudan-Robert%20Ho) | Robert Ho |
+| [Poly-logarithmic independence fools AC0 circuits](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Poly-logarithmic%20independence%20fools%20AC0%20circuits-Jason%20Dong) | Jason Dong |
+| [Schnorr Identification Protocol](https://github.com/ucb-lean-course-sp26/final-projects/tree/main/Schnorr%20Identification%20Protocol-Esha%20Garg) | Esha Garg |
 
 ### Groups
 Form groups of **1–3 people**. In general, choose a harder project if you have more people in your group.
@@ -128,4 +149,4 @@ Miscellaneous:
 documentation.
 - Lean community [Zulip channel](https://leanprover.zulipchat.com/) for
 questions and discussions.
-- [ECClib Project](https://shilun-allan-li.github.io/tcslib/) by Venkatesan Guruswami, Shilun Li, Henry Li, Frederick Dehmel, Annie Yao et al.
+- [TCSlib Project](https://shilun-allan-li.github.io/tcslib/) by Shilun Li, Venkatesan Guruswami, Frederick Dehmel, Jason Dong, Henry Li et al.
