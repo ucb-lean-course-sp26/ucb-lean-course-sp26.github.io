@@ -105,6 +105,7 @@ An **8-minute short presentation** covering:
 - **PS3 (Due 03/05)**:
   [[View On Github]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset3.lean)
   [[Download]](/psets/pset3.lean)
+  [[Solutions]](https://github.com/ucb-lean-course-sp26/ucb-lean-course-sp26.github.io/tree/main/psets/pset3sol.lean)
 
 ## AI policy
 You are welcome to use any AI tool to ask **general questions** about Lean4 syntax, tactics, and mathlib theorem usage.
