@@ -18,12 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: CS 294-268 (Spring 2026)
+title: UC Berkeley CS 294-268 (Spring 2026)
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Proving TCS and Math Theorems in Lean
+  Course materials for UC Berkeley CS 294-268 (Spring 2026): Proving TCS
+  and Math Theorems in Lean 4, including lectures, exercises, and final projects.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ucb-cs-294-268.github.io"
+url: "https://ucb-lean-course-sp26.github.io"
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
@@ -31,6 +32,12 @@ markdown: kramdown
 kramdown:
   parse_block_html: false  # ignore markdown inside HTML tags (for slides)
   toc_levels: 2..3  # only include H2 (##) and H3 (###) in the TOC
+
+defaults:
+  - scope:
+      path: "google5e2e211e57506bdf.html"
+    values:
+      sitemap: false
 
 collections:
   drafts:
@@ -47,6 +54,7 @@ collections:
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 future: true
 
